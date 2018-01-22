@@ -1,0 +1,27 @@
+{
+    "presets": [
+        "next/babel"
+    ],
+    "plugins": [
+        [
+            "import",
+            {
+                "libraryName": "antd",
+                "style": false
+            }
+        ],
+        [
+            "transform-runtime", {
+            "polyfill": true,
+            "regenerator": true
+        }],
+        [
+            "module-resolver",
+            {
+                "alias": {
+                    "@components": "./components/"
+                }
+            }
+        ]
+    ]
+}
