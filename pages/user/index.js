@@ -7,10 +7,10 @@ import 'isomorphic-unfetch';
 
 export default class extends Component {
     static async getInitialProps() {
-        const res = await fetch('https://api.github.com/repos/zeit/next.js');
+        const res = await fetch('http://ez2:8080/test');
         const json = await res.json();
         return {
-            msg: json.language
+            msg: json.msg
         };
     };
 
