@@ -19,7 +19,11 @@ class RegistrationForm extends Component {
                 })
                 .then( r => r.json() )
                 .then( data => {
-                    console.log(data);
+                    if (data.success) {
+                        alert("注册成功");
+                    } else {
+                        alert("注册失败：" + data.msg);
+                    }
                 });
             }
         })
@@ -30,8 +34,8 @@ class RegistrationForm extends Component {
     }
 
     validateNickname = (rule, value, callback) => {
-        if (value && (value.length < 3 || value.length > 11)) {
-            callback("输入昵称长度必须大于 2 且小于 12");
+        if (value && (value.length < 3 || value.length > 15)) {
+            callback("输入昵称长度必须大于 2 且小于 16");
         }
         callback();
     }
